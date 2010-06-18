@@ -12,7 +12,7 @@ task compileJava(dependsOn: JavaPlugin.PROCESS_RESOURCES_TASK_NAME, overwrite: t
     ant.iajc(source:sourceCompatibility, 
              target:targetCompatibility, 
              //destDir:sourceSets.main.classesDir.absolutePath,
-             outjar: "./build/libs/zk.jar",
+             outjar: "./dist/zk.jar",
              maxmem:"512m", fork:"true",
              aspectPath: configurations.aspects.asPath, 
              inpath: configurations.ajInpath.asPath, 
