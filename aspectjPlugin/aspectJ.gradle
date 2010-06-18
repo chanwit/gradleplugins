@@ -11,7 +11,8 @@ task compileJava(dependsOn: JavaPlugin.PROCESS_RESOURCES_TASK_NAME, overwrite: t
     ant.taskdef( resource:"org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties", classpath: configurations.ajc.asPath)
     ant.iajc(source:sourceCompatibility, 
              target:targetCompatibility, 
-             destDir:sourceSets.main.classesDir.absolutePath, 
+             //destDir:sourceSets.main.classesDir.absolutePath,
+             outJar: "./build/lib/zk.jar",
              maxmem:"512m", fork:"true",
              aspectPath: configurations.aspects.asPath, 
              inpath: configurations.ajInpath.asPath, 
